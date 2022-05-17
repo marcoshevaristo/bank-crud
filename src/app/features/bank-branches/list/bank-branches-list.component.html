@@ -1,0 +1,35 @@
+<div class="page-header">
+  <div class="page-title">
+    <h1>{{ 'bank_branches_list.title' | translate }}</h1>
+    <h2>{{ 'bank_branches_list.subtitle' | translate }}</h2>
+  </div>
+  <div class="page-filter"></div>
+</div>
+
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z3" (matSortChange)="sortData($event)">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'bank_branches_list.column.name' | translate }}</th>
+    <td mat-cell *matCellDef="let businessItem">{{ businessItem.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="business">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'bank_branches_list.column.business' | translate }}</th>
+    <td mat-cell *matCellDef="let businessItem">{{ businessItem.business }}</td>
+  </ng-container>
+  <ng-container matColumnDef="valuation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'bank_branches_list.column.valuation' | translate }}</th>
+    <td mat-cell *matCellDef="let businessItem" [currency]="businessItem.valuation"></td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef style="width: 15%; text-align: center">Ações</th>
+    <td mat-cell *matCellDef="let businessItem" style="text-align: center; display: flex; flex-direction: row">
+      <mat-icon class="icon-button" (click)="editBranch(businessItem)">edit</mat-icon>
+      <mat-icon class="icon-button" (click)="viewBranch(businessItem)">visibility</mat-icon>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">Nenhum item encontrado</td>
+  </tr>
+</table>
+<mat-paginator showFirstLastButtons hidePageSize [pageSize]="5"></mat-paginator>

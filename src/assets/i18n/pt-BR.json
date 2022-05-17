@@ -1,0 +1,14 @@
+{
+  "pt-BR": "PT",
+  "en-US": "EN",
+  "bank_branches_list": {
+    "title": "Polos Itaú",
+    "subtitle": "Confira abaixo alguns dos principais polos do Itaú",
+    "column": {
+      "name": "Nome",
+      "business": "Negócio",
+      "valuation": "Avaliação",
+      "actions": "Ações"
+    }
+  }
+}

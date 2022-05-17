@@ -15,7 +15,7 @@ export class HttpInterceptorProvider implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((response: HttpErrorResponse) => {
-        return throwError(response);
+        return throwError(() => new Error(response.message));
       }),
       tap((response) => {})
     );

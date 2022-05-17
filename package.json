@@ -1,5 +1,5 @@
 {
-  "name": "angular-template",
+  "name": "bank-list",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -13,13 +13,18 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.8",
+    "@angular/cdk": "^13.3.7",
     "@angular/common": "~13.3.8",
     "@angular/compiler": "~13.3.8",
     "@angular/core": "~13.3.8",
     "@angular/forms": "~13.3.8",
+    "@angular/material": "^13.3.7",
     "@angular/platform-browser": "~13.3.8",
     "@angular/platform-browser-dynamic": "~13.3.8",
     "@angular/router": "~13.3.8",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "font-awesome": "^4.7.0",
     "rxjs": "^7.5.5",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.5"

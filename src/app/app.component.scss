@@ -1,0 +1,9 @@
+@import 'breakpoints';
+
+.router-container {
+    padding: 40px 50px;
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: 20px 25px;
+    }
+}
