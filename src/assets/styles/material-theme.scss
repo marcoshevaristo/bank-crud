@@ -1,0 +1,22 @@
+.mat-table {
+    width: 100%;
+
+    .mat-cell {
+        color: var(--font-color);
+    }
+
+    .mat-sort-header.text-centered {
+        .mat-sort-header-container {
+            justify-content: center;
+        }
+    }
+
+    .action-button {
+        margin: 0px 10px;
+        cursor: pointer;
+    }
+}
+
+.mat-icon {
+    color: var(--font-color-light);
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { IBusiness } from 'src/app/models/business.model';
 
 @Component({
@@ -7,7 +8,7 @@ import { IBusiness } from 'src/app/models/business.model';
   styleUrls: ['./bank-branches-list.component.scss'],
 })
 export class BankBranchesListComponent implements OnInit {
-  public dataSource: IBusiness[] = [
+  public dataSource: MatTableDataSource<IBusiness> = new MatTableDataSource([
     {
       name: 'Teste',
       business: 'teste 1',
@@ -17,10 +18,12 @@ export class BankBranchesListComponent implements OnInit {
       cnpj: '23654987456766',
       id: 1,
     },
-  ];
-  public columns = ['name', 'business', 'valuation', 'actions'];
+  ]);
+  public columns = ['name', 'business', 'valuation', 'status', 'actions'];
 
-  constructor() {}
+  constructor() {
+    this.dataSource.filter;
+  }
 
   ngOnInit(): void {}
 
@@ -29,4 +32,11 @@ export class BankBranchesListComponent implements OnInit {
   public viewBranch(branch: IBusiness) {}
 
   public sortData($event) {}
+
+  public getStatusIcon(itemActive: boolean) {
+    if (itemActive) {
+      return 'enabled';
+    }
+    return 'disabled';
+  }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -33,6 +34,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [BankBranchesListComponent, BankBranchesViewComponent],
-  imports: [SharedModule, RouterModule.forChild(routes), MatTableModule, MatIconModule, MatPaginatorModule],
+  imports: [
+    SharedModule,
+    RouterModule.forChild(routes),
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule,
+  ],
 })
 export class BankBranchesModule {}

@@ -8,6 +8,7 @@
       "name": "Name",
       "business": "Business",
       "valuation": "Valuation",
+      "status": "Status",
       "actions": "Actions"
     }
   }
