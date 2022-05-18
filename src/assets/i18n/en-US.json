@@ -13,6 +13,32 @@
       "actions": "Actions"
     }
   },
+  "bank_branches_view": {
+    "title": "Branch {{0}}",
+    "subtitle": "Show details of branch {{0}}#{{1}}",
+    "address": {
+      "title": "Address Details",
+      "fields": {
+        "zipcode": "Zipcode",
+        "street": "Street name",
+        "neighborhood": "Neighborhood",
+        "state": "State",
+        "city": "City"
+      },
+      "cep_service_error": "Não conseguimos encontrar o CEP"
+    },
+    "business": {
+      "title": "Company Details",
+      "fields": {
+        "name": "Name",
+        "business": "Business",
+        "valuation": "Valuation",
+        "taxid": "CNPJ",
+        "active": "Active?"
+      }
+    },
+    "submit_success": "Branch saved successfully"
+  },
   "material": {
     "paginator": {
       "of": "of",
@@ -20,6 +46,16 @@
       "next_page": "Next",
       "previous_page": "Previous",
       "totalizer": "{{0}} of {{1}} from a total of {{2}} items"
+    }
+  },
+  "generic": {
+    "boolean": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "forms": {
+      "back": "Go back",
+      "submit": "Save"
     }
   }
 }

@@ -9,9 +9,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { BankBranchesDetailResolver } from 'src/app/resolvers/bank-branches-detail.resolver';
 import { BankBranchesListResolver } from 'src/app/resolvers/bank-branches-list.resolver';
 import { BankBranchService } from 'src/app/services/bank-branch.service';
+import { FieldsModule } from 'src/app/shared/fields/fields.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BankBranchesListComponent } from './list/bank-branches-list.component';
 import { BankBranchesViewComponent } from './view/bank-branches-view.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -56,6 +58,7 @@ const routes: Routes = [
     MatSortModule,
     ReactiveFormsModule,
     MatInputModule,
+    FieldsModule,
   ],
   providers: [BankBranchService, BankBranchesListResolver, BankBranchesDetailResolver],
 })

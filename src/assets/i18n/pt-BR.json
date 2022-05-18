@@ -15,7 +15,29 @@
   },
   "bank_branches_view": {
     "title": "Polo {{0}}",
-    "subtitle": "Exibindo detalhes do polo {{0}}#{{1}}"
+    "subtitle": "Exibindo detalhes do polo {{0}}#{{1}}",
+    "address": {
+      "title": "Detalhes do Endereço",
+      "fields": {
+        "zipcode": "CEP",
+        "street": "Nome da rua",
+        "neighborhood": "Bairro",
+        "state": "Estado",
+        "city": "Cidade"
+      },
+      "cep_service_error": "Não conseguimos encontrar o CEP"
+    },
+    "business": {
+      "title": "Detalhes da Empresa",
+      "fields": {
+        "name": "Nome",
+        "business": "Negócio",
+        "valuation": "Avaliação",
+        "taxid": "CNPJ",
+        "active": "Ativo?"
+      }
+    },
+    "submit_success": "Polo salvo com sucesso"
   },
   "material": {
     "paginator": {
@@ -24,6 +46,16 @@
       "next_page": "Próxima",
       "previous_page": "Anterior",
       "totalizer": "{{0}} de {{1}} de um total de {{2}} registros"
+    }
+  },
+  "generic": {
+    "boolean": {
+      "yes": "Sim",
+      "no": "Não"
+    },
+    "forms": {
+      "back": "Voltar",
+      "submit": "Salvar"
     }
   }
 }

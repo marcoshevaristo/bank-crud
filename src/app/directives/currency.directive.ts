@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { currencies } from 'src/constants';
+import { CURRENCIES } from 'src/constants';
 
 @Directive({ selector: '[currency]' })
 export class CurrencyDirective implements OnInit {
@@ -27,7 +27,7 @@ export class CurrencyDirective implements OnInit {
 
   private formatValue(value: number) {
     return value.toLocaleString(this.translateService.currentLang, {
-      currency: currencies[this.translateService.currentLang],
+      currency: CURRENCIES[this.translateService.currentLang],
       style: 'currency',
     });
   }

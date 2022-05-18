@@ -11,4 +11,36 @@
         display: flex;
     }
 
+    .row {
+        margin-top: 40px;
+        margin-left: -10px;
+
+        .section-title {
+            font-weight: 500;
+            margin-left: 10px;
+            color: var(--font-color-light);
+            margin-bottom: 10px;
+        }
+
+        .fields {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+
+            app-text-field {
+                margin: 0px 5px;
+                flex-basis: 15%;
+            }
+
+            .street-field {
+                flex-basis: 22%;
+            }
+        }
+    }
+
+    .save-button {
+        margin-left: 10px;
+        width: 130px;
+    }
 }

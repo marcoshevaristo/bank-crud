@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { AvailableLanguage } from './models/available-language.enum';
 import { LoadingService } from './services/loading.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

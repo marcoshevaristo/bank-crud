@@ -6,5 +6,69 @@
     </div>
   </div>
 
-  <div></div>
+  <section class="row">
+    <p class="section-title">
+      {{ 'bank_branches_view.address.title' | translate }}
+    </p>
+    <div class="fields">
+      <app-text-field
+        [label]="'bank_branches_view.address.fields.zipcode' | translate"
+        [control]="formGroup.get('cep')"
+        [mask]="postalCodeMask"
+        (onBlur)="searchPostalCode()"
+      ></app-text-field>
+      <app-text-field
+        [label]="'bank_branches_view.address.fields.street' | translate"
+        [control]="formGroup.get('street')"
+        class="street-field"
+      ></app-text-field>
+      <app-text-field
+        [label]="'bank_branches_view.address.fields.neighborhood' | translate"
+        [control]="formGroup.get('neighborhood')"
+      ></app-text-field>
+      <app-text-field
+        [label]="'bank_branches_view.address.fields.state' | translate"
+        [control]="formGroup.get('state')"
+      ></app-text-field>
+      <app-text-field
+        [label]="'bank_branches_view.address.fields.city' | translate"
+        [control]="formGroup.get('city')"
+      ></app-text-field>
+    </div>
+  </section>
+  <section class="row">
+    <p class="section-title">
+      {{ 'bank_branches_view.business.title' | translate }}
+    </p>
+    <div class="fields">
+      <app-text-field
+        [label]="'bank_branches_view.business.fields.name' | translate"
+        [control]="formGroup.get('name')"
+      ></app-text-field>
+      <app-text-field
+        [label]="'bank_branches_view.business.fields.business' | translate"
+        [control]="formGroup.get('business')"
+      ></app-text-field>
+      <app-currency-field
+        [label]="'bank_branches_view.business.fields.valuation' | translate"
+        [control]="formGroup.get('valuation')"
+      ></app-currency-field>
+      <app-text-field
+        [label]="'bank_branches_view.business.fields.taxid' | translate"
+        [control]="formGroup.get('cnpj')"
+        [mask]="taxIdMask"
+      ></app-text-field>
+      <app-dropdown-field
+        [label]="'bank_branches_view.business.fields.active' | translate"
+        [control]="formGroup.get('active')"
+        [options]="dropdownBooleanOptions"
+      ></app-dropdown-field>
+    </div>
+  </section>
+  <footer>
+    <button mat-flat-button color="accent" (click)="goBack()">{{ 'generic.forms.back' | translate }}</button>
+    <button *ngIf="!isReadonly" mat-flat-button color="primary" class="save-button" (click)="onSubmit()">
+      {{ 'generic.forms.submit' | translate }}
+    </button>
+  </footer>
 </div>
