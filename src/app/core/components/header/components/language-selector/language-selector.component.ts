@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
 import { AvailableLanguage } from 'src/app/models/available-language.enum';
 
 @Component({
@@ -8,23 +7,16 @@ import { AvailableLanguage } from 'src/app/models/available-language.enum';
   templateUrl: './language-selector.component.html',
   styleUrls: ['./language-selector.component.scss'],
 })
-export class LanguageSelectorComponent implements OnInit, OnDestroy {
+export class LanguageSelectorComponent implements OnInit {
   public currentLang: AvailableLanguage = AvailableLanguage.ptBR;
-  private subscription = new Subscription();
 
   constructor(private translateService: TranslateService) {}
 
   ngOnInit(): void {
     this.currentLang = this.translateService.currentLang as AvailableLanguage;
-    this.subscription.add(
-      this.translateService.onLangChange.subscribe((newLang) => {
-        this.currentLang = newLang.lang as AvailableLanguage;
-      })
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.translateService.onLangChange.subscribe((newLang) => {
+      this.currentLang = newLang.lang as AvailableLanguage;
+    });
   }
 
   public changeLanguage() {

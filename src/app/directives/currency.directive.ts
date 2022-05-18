@@ -1,12 +1,10 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
 import { currencies } from 'src/constants';
 
 @Directive({ selector: '[currency]' })
-export class CurrencyDirective implements OnInit, OnDestroy {
+export class CurrencyDirective implements OnInit {
   private lastValue = 0;
-  private subscription = new Subscription();
   private element: HTMLElement;
 
   @Input()
@@ -22,15 +20,9 @@ export class CurrencyDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscription.add(
-      this.translateService.onLangChange.subscribe((newLang) => {
-        this.element.innerHTML = this.formatValue(Number(this.lastValue));
-      })
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.translateService.onLangChange.subscribe((newLang) => {
+      this.element.innerHTML = this.formatValue(Number(this.lastValue));
+    });
   }
 
   private formatValue(value: number) {

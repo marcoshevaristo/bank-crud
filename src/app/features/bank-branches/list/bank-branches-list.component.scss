@@ -1,7 +1,27 @@
-.enabled {
-    color: var(--success-color);
-}
+@import 'breakpoints';
 
-.disabled {
-    color: var(--error-color);
+.container {
+    padding: 40px 70px;
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: 20px 40px;
+    }
+    
+    .enabled {
+        color: var(--success-color);
+    }
+    
+    .disabled {
+        color: var(--error-color);
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+
+        .page-filter {
+            width: 500px;
+        }
+    }
+
 }

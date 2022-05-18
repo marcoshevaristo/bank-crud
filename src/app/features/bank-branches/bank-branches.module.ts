@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
+import { BankBranchesDetailResolver } from 'src/app/resolvers/bank-branches-detail.resolver';
+import { BankBranchesListResolver } from 'src/app/resolvers/bank-branches-list.resolver';
+import { BankBranchService } from 'src/app/services/bank-branch.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BankBranchesListComponent } from './list/bank-branches-list.component';
 import { BankBranchesViewComponent } from './view/bank-branches-view.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -17,6 +21,9 @@ const routes: Routes = [
   {
     path: 'list',
     component: BankBranchesListComponent,
+    resolve: {
+      bankBranchesList: BankBranchesListResolver,
+    },
   },
   {
     path: 'new',
@@ -25,10 +32,16 @@ const routes: Routes = [
   {
     path: 'view/:id',
     component: BankBranchesViewComponent,
+    resolve: {
+      bankBranchDetail: BankBranchesDetailResolver,
+    },
   },
   {
     path: 'edit/:id',
     component: BankBranchesViewComponent,
+    resolve: {
+      bankBranchDetail: BankBranchesDetailResolver,
+    },
   },
 ];
 
@@ -41,6 +54,9 @@ const routes: Routes = [
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
+  providers: [BankBranchService, BankBranchesListResolver, BankBranchesDetailResolver],
 })
 export class BankBranchesModule {}

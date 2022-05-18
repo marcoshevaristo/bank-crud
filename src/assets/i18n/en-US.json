@@ -4,12 +4,22 @@
   "bank_branches_list": {
     "title": "Itaú Branches",
     "subtitle": "Check out some of Itaú's main branches below",
+    "filter": { "label": "Search..." },
     "column": {
       "name": "Name",
       "business": "Business",
       "valuation": "Valuation",
       "status": "Status",
       "actions": "Actions"
+    }
+  },
+  "material": {
+    "paginator": {
+      "of": "of",
+      "items_per_page": "Items per page",
+      "next_page": "Next",
+      "previous_page": "Previous",
+      "totalizer": "{{0}} of {{1}} from a total of {{2}} items"
     }
   }
 }
